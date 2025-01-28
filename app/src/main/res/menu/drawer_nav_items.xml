@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1"
+        >
+
+    <item
+        android:id="@+id/nav_item_home"
+        android:title="Home"
+        android:icon="@drawable/home"
+
+
+        />
+
+    <item android:title="Recent"
+        android:id="@+id/nav_recent"
+        android:icon="@drawable/recent"
+
+        />
+
+    <item android:title="Pinned"
+        android:id="@+id/nav_pinned"
+        android:icon="@drawable/pinned"
+
+        />
+
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        >
+
+    <item android:title="Review"
+        android:id="@+id/nav_review"
+        android:icon="@drawable/review"
+
+        />
+
+    <item android:title="Exit"
+        android:id="@+id/nev_exit"
+        android:icon="@drawable/exit"
+
+        />
+    </group>
+</menu>
