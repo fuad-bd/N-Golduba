@@ -9,6 +9,7 @@
         android:id="@+id/nav_item_home"
         android:title="Home"
         android:icon="@drawable/home"
+        android:checkable="true"
 
 
         />
@@ -16,12 +17,14 @@
     <item android:title="Recent"
         android:id="@+id/nav_recent"
         android:icon="@drawable/recent"
+        android:checkable="true"
 
         />
 
     <item android:title="Pinned"
         android:id="@+id/nav_pinned"
         android:icon="@drawable/pinned"
+        android:checkable="true"
 
         />
 
@@ -34,6 +37,7 @@
     <item android:title="Review"
         android:id="@+id/nav_review"
         android:icon="@drawable/review"
+        android:checkable="true"
 
         />
 

@@ -35,9 +35,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        FrameLayout drawerNavframeLayout,bottomNavframeLayout;
+        FrameLayout drawerNavframeLayout,bottomNavframeLayout,home_Fragment;
         bottomNavframeLayout = findViewById(R.id.bottomNavframeLayout);
-        drawerNavframeLayout = findViewById(R.id.drawerNavframeLayout);
+
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.home_Fragment, new HomeFragment());
+        fragmentTransaction.commit();
 
         bottomNavframeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,16 +56,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        drawerNavframeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.drawerNavframeLayout, new DrawerNavigation());
-                fragmentTransaction.commit();
-            }
-        });
 
     }
 
