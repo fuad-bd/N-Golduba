@@ -41,7 +41,7 @@ public class BottomNavigation extends Fragment {
                 // Handle Home button click
                 if (item.getItemId() == R.id.menu_home) {
 
-                   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.home_Fragment,
+                   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.home_frameLayout,
                            new HomeFragment()).commit();
                 }
                 // Handle Notification button click

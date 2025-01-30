@@ -23,6 +23,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    FrameLayout drawerFrameLayout,bottomNavframeLayout,home_frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +36,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        FrameLayout drawerNavframeLayout,bottomNavframeLayout,home_Fragment;
+
         bottomNavframeLayout = findViewById(R.id.bottomNavframeLayout);
+        drawerFrameLayout= findViewById(R.id.drawerFrameLayout);
+        home_frameLayout = findViewById(R.id.home_frameLayout);
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.home_Fragment, new HomeFragment());
+        fragmentTransaction.add(R.id.home_frameLayout, new HomeFragment());
         fragmentTransaction.commit();
 
         bottomNavframeLayout.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +55,18 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.bottomNavframeLayout, new BottomNavigation());
                 fragmentTransaction.commit();
+
+            }
+        });
+        drawerFrameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.drawerLayout, new DrawerFragment());
+                fragmentTransaction.commit();
+
 
             }
         });

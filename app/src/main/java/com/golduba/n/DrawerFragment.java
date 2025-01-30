@@ -1,14 +1,14 @@
 package com.golduba.n;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +17,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,7 +43,8 @@ public class DrawerFragment extends Fragment {
                 getActivity(), drawerLayout,materialToolbar,R.string.drawer_close,R.string.drawer_open);
         drawerLayout.addDrawerListener(toggle);
 
-        //---------------------------------ToolberItem----------------------------------------------
+        //-----------------------------------------------------------------------------
+
         materialToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -65,7 +65,13 @@ public class DrawerFragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if (item.getItemId()==R.id.nav_item_home){
-                    Toast.makeText(getContext(), "Home", Toast.LENGTH_SHORT).show();
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.home_frameLayout, new HomeFragment());
+                    fragmentTransaction.commit();
+
+                    //Toast.makeText(getContext(), "Home", Toast.LENGTH_SHORT).show();
                     drawerLayout.closeDrawer(GravityCompat.START);
                 }
                 else if (item.getItemId()==R.id.nav_recent){
