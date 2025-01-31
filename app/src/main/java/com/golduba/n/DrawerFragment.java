@@ -24,7 +24,6 @@ public class DrawerFragment extends Fragment {
 
     DrawerLayout drawerLayout;
     MaterialToolbar materialToolbar;
-    FrameLayout drawerFrameLayout;
     NavigationView drawerNavItems;
     TextView drawer_header_title;
     View headerView;
@@ -35,7 +34,6 @@ public class DrawerFragment extends Fragment {
 
         drawerLayout = drawerView.findViewById(R.id.drawerLayout);
         materialToolbar =drawerView.findViewById(R.id.materialToolbar);
-        drawerFrameLayout = drawerView.findViewById(R.id.drawerFrameLayout);
         drawerNavItems = drawerView.findViewById(R.id.drawerNavItems);
         headerView = drawerNavItems.getHeaderView(0);
         drawer_header_title = headerView.findViewById(R.id.drawer_header_title);  drawer_imageView = headerView.findViewById(R.id.drawer_imageView);
